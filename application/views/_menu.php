@@ -5,8 +5,6 @@
       <li><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-home"></i> Dashboard </a></li>
       <li><a href="<?php echo base_url('admin/artikel'); ?>"><i class="fa fa-home"></i> Artikel </a></li>
       <li><a href="<?php echo base_url('berita'); ?>"><i class="fa fa-home"></i> Berita </a></li>
-      <li><a href="#"><i class="fa fa-home"></i> Home </a></li>
-      <li><a href="#"><i class="fa fa-home"></i> Home </a></li>
      </ul>
   </div>
 </div>

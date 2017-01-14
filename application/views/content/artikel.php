@@ -3,18 +3,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Plain Page</h3>
-              </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
+                <h3>Artikel</h3>
               </div>
             </div>
 
@@ -24,38 +13,52 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Plain Page</h2>
-                    <div class="clearfix"></div>
+                    <h2>Daftar Artikel</h2>
+                      <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  <form action="" method="post">
-                  <div class="row form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Judul <span class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
-                    </div>
-                  </div>
+                      <table class="table table-striped">
+                        <thead>
+                          <th>No.</th>
+                          <th>Judul</th>
+                          <th>Isi</th>
+                          <th>Gambar</th>
+                          <th>Dibuat Pada</th>
+                          <th></th>
+                        </thead>
+                        <tbody>
+                        <?php 
+                        $no = 1;
+                        foreach ($query as $row) { ?>
+                          <tr>
+                            <td><?php echo $no++; ?></td>
+                            <td><?php echo $row->judul; ?></td>
+                            <td><?php echo $row->isi; ?></td>
+                            <td><?php echo $row->gambar; ?></td>
+                            <td><?php echo $row->create_at; ?></td>
+                            <td>
+                              <div class="btn-group">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Aksi <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">Edit</a></li>
+                                  <li><a href="#">Delete</a></li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                        <?php } ?>
+                        </tbody>
+                      </table>
 
-                  <?php include('_textarea.php'); ?>
-
-                  <div class="row form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Gambar</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="file" id="first-name" class="form-control col-md-7 col-xs-12">
-                    </div>
-                  </div>
-
-
-                  <div class="form-group">
-                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                      <button type="submit" class="btn btn-success">Submit</button>
-                    </div>
-                  </div>
-
-
-                  </form>
+                      <div class="form-group">
+                        <div class="row">
+                          <a href="<?php echo base_url('admin/tambahartikel'); ?>" class="btn btn-success">
+                          Tambah
+                          </a>
+                        </div>
+                      </div>
                   </div>
                 </div>
               </div>
