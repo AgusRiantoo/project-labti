@@ -17,25 +17,19 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  <form action="<?php base_url('admin/tambahartikel'); ?>" method="post">
+                  <form action="<?php base_url('admin/tambahartikel'); ?>" method="post" enctype="multipart/form-data">
                   <div class="row form-group">
-                    <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Judul <span class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="judul" required="required" class="form-control col-md-7 col-xs-12">
-                    </div>
+                    <label class="control-label">Judul :</label>
+                    <input type="text" name="judul" required="required" class="form-control col-md-7 col-xs-12">
+                  </div>
+                  <div class="row form-group">
+                    <label class="control-label">Deskripsi :</label>
+                    <textarea name="isi" class="form-control" placeholder="Masukan isi"></textarea>
                   </div>
                   <br>
                   <div class="row form-group">
-                    <textarea name="isi" class="form-control"></textarea>
-                  </div>
-                  <br>
-                  <div class="row form-group">
-                    <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Gambar</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="file" name="gambar" class="form-control col-md-7 col-xs-12">
-                    </div>
+                    <label class="control-label">Gambar :</label>
+                    <input type="file" name="gambar" class="control-file">
                   </div>
 
                   <br>
@@ -45,7 +39,6 @@
                     <button type="submit" name="submit" class="btn btn-success">Submit</button>
                     </center>
                   </div>
-
 
                   </form>
                   </div>

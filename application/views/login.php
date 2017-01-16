@@ -13,11 +13,11 @@
 <body>
 <div class="container">
 
-      <form class="form-signin" action="<?php echo base_url('user/index'); ?>" method="POST">
+      <form class="form-signin" action="<?php echo base_url('user/login'); ?>" method="POST">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label>Email</label>
 
-        <input type="text" name="username" class="form-control" placeholder="Email address" required autofocus>
+        <input type="text" name="email" class="form-control" placeholder="Email address" required autofocus>
 
         <label>Password</label>
         <input type="password" name="password" class="form-control" placeholder="Password" required>

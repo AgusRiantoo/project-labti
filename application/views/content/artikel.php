@@ -21,7 +21,6 @@
                         <thead>
                           <th>No.</th>
                           <th>Judul</th>
-                          <th>Isi</th>
                           <th>Gambar</th>
                           <th>Dibuat Pada</th>
                           <th></th>
@@ -33,17 +32,17 @@
                           <tr>
                             <td><?php echo $no++; ?></td>
                             <td><?php echo $row->judul; ?></td>
-                            <td><?php echo $row->isi; ?></td>
-                            <td><?php echo $row->gambar; ?></td>
+                            <td><img src="<?php echo base_url('images/'.$row->gambar); ?>" height="75px"></td>
                             <td><?php echo $row->create_at; ?></td>
                             <td>
                               <div class="btn-group">
-                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   Aksi <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                  <li><a href="#">Edit</a></li>
-                                  <li><a href="#">Delete</a></li>
+                                  <li><a href="<?php echo base_url('admin/lihat/'.$row->id); ?>">Lihat</a></li>
+                                  <li><a href="<?php echo base_url('admin/updateartikel/'.$row->id); ?>">Edit</a></li>
+                                  <li><a href="<?php echo base_url('admin/hapusartikel/'.$row->id); ?>">Hapus</a></li>
                                 </ul>
                               </div>
                             </td>

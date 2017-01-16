@@ -3,8 +3,8 @@
     <h3>General</h3>
     <ul class="nav side-menu">
       <li><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-home"></i> Dashboard </a></li>
-      <li><a href="<?php echo base_url('admin/artikel'); ?>"><i class="fa fa-home"></i> Artikel </a></li>
-      <li><a href="<?php echo base_url('berita'); ?>"><i class="fa fa-home"></i> Berita </a></li>
+      <li><a href="<?php echo base_url('admin/artikel'); ?>"><i class="fa fa-list"></i> Artikel </a></li>
+      <li><a href="<?php echo base_url('page'); ?>"><i class="fa fa-home"></i> View Site </a></li>
      </ul>
   </div>
 </div>
