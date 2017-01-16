@@ -3,6 +3,7 @@
     <div class="row" style="min-height: 550px;background-color: #fafafa">
       <div style="padding: 50px;">
         <h1><?php echo $query['judul'] ?></h1>
+         <img src="<?php echo base_url('images/'.$query['gambar']); ?>" height="350px">
         <h4><?php echo $query['isi']; ?></h4>
       </div>
     </div>
