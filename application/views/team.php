@@ -7,41 +7,48 @@
           <h1>Our Team</h1>
           <hr class="pg-titl-bdr-btm"></hr>
         </div>
-        <div class="autoplay">
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="team-info">
               <div class="img-sec">
-                <img src="<?php echo base_url() ?>/images/agent1.jpg" class="img-responsive" width="256px">
+                <img src="<?php echo base_url() ?>/images/agent1.jpg" class="img-responsive" height="256px">
               </div>
+              <div class="row">
               <div class="fig-caption">
                 <h3>Agus Rianto</h3>
-                <p class="marb-20">Backend Developer</p>
+              </div>                
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="team-info">
               <div class="img-sec">
-                <img src="<?php echo base_url() ?>/images/agent2.jpg" class="img-responsive" width="256px">
+                <img src="<?php echo base_url() ?>/images/agent2.jpg" class="img-responsive" height="256px">
               </div>
               <div class="fig-caption">
                 <h3>Choiriza Anastasia</h3>
-                <p class="marb-20">Front End</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="team-info">
               <div class="img-sec">
-                <img src="<?php echo base_url() ?>/images/agent3.jpg" class="img-responsive" width="256px">
+                <img src="<?php echo base_url() ?>/images/agent3.jpg" class="img-responsive" height="256px">
               </div>
               <div class="fig-caption">
                 <h3>Candra Kurniawan</h3>
-                <p class="marb-20">Analyst</p>
               </div>
             </div>
           </div>
-        </div>
+          <div class="col-md-3">
+            <div class="team-info">
+              <div class="img-sec">
+                <img src="<?php echo base_url() ?>/images/agent4.png" class="img-responsive" height="256px">
+              </div>
+              <div class="fig-caption">
+                <h3>Masyeni</h3>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   </div>

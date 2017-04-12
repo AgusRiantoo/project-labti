@@ -46,7 +46,7 @@
             <br />
 
             <!-- sidebar menu -->
-            <?php include('/../_menu.php'); ?>
+            <?php $this->load->view('_menu'); ?>
             <!-- /sidebar menu -->
 
 

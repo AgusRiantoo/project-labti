@@ -4,6 +4,7 @@
     <ul class="nav side-menu">
       <li><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-home"></i> Dashboard </a></li>
       <li><a href="<?php echo base_url('admin/artikel'); ?>"><i class="fa fa-list"></i> Artikel </a></li>
+      <li><a href="<?php echo base_url('admin/galery'); ?>"><i class="fa fa-list"></i> Galery </a></li>
       <li><a href="<?php echo base_url('page'); ?>"><i class="fa fa-home"></i> View Site </a></li>
      </ul>
   </div>

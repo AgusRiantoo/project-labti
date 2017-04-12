@@ -27,7 +27,6 @@ class User extends CI_Controller {
           $this->session->set_userdata(array(
               'Login' => true,
               'user_id' => $user['id'],
-              'nama' => $user['nama']
             ));
         redirect('admin');
       	}else {
@@ -40,4 +39,5 @@ class User extends CI_Controller {
 	    $this->session->sess_destroy();
 	    redirect();
 	}
+
 }

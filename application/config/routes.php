@@ -52,3 +52,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'page';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['tiket'] = 'page/view/1';
+$route['jadwal-makan-satwa'] = 'page/view/2';
+$route['lokasi'] = 'page/view/3';

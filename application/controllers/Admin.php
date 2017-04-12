@@ -15,15 +15,15 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('template/header');
-		$this->load->view('content/dashboard');
+		$this->load->view('admin/dashboard');
 		$this->load->view('template/footer');
 	}
 
 	public function artikel(){
-		$data['query'] = $this->adminmodel->read();
+		$data['query'] = $this->adminmodel->read('artikel');
 
 		$this->load->view('template/header');
-		$this->load->view('content/artikel',$data);
+		$this->load->view('admin/artikel',$data);
 		$this->load->view('template/footer');
 	}
 
@@ -36,7 +36,7 @@ class Admin extends CI_Controller {
 
         $this->load->library('upload', $config);
 		$this->load->view('template/header');
-		$this->load->view('content/artikel_insert',$data);
+		$this->load->view('admin/artikel_insert',$data);
 		$this->load->view('template/footer');
 
 		if (isset($_POST['submit'])) {
@@ -54,8 +54,7 @@ class Admin extends CI_Controller {
 		                $upload = $this->upload->data();
 		                $gambar = $upload['file_name'];
 		        }else{
-		        	$gambar = 'foto.jpg';
-		        }
+					echo '<script>alert("Data gagal ditambahkan");history.go(-1);</script>';		        }
 
 				$data = array(
 					'judul' => $judul,
@@ -63,11 +62,11 @@ class Admin extends CI_Controller {
 					'gambar'=> $gambar
 					);
 
-				$query = $this->adminmodel->create($data);
+				$query = $this->adminmodel->create('artikel',$data);
 				if (!$query) {
 					echo '<script>alert("Data gagal ditambahkan");</script>';
 				}else{
-					echo '<script>alert("Data berhasil ditambahkan");</script>';
+					redirect('admin/artikel');
 				}
 				return TRUE;
 			}
@@ -77,19 +76,30 @@ class Admin extends CI_Controller {
 	public function hapusartikel($id){
 		if (isset($id)) {
 			# code...
-			$this->adminmodel->delete($id);
+			$this->adminmodel->delete('artikel',$id);
 			redirect('admin/artikel');
 		}else{
 			redirect('admin');
 		}
 	}
 
+	public function hapusgalery($id){
+		if (isset($id)) {
+			# code...
+			$this->adminmodel->delete('galery',$id);
+			redirect('admin/galery');
+		}else{
+			redirect('admin');
+		}
+	}
+
+
 	public function updateartikel($id){
 		if (isset($id)) {
 			$data['judul'] = "Update Artikel";
 			$data['row'] = $this->adminmodel->read_by_id($id);
 			$this->load->view('template/header');
-			$this->load->view('content/artikel_update',$data);
+			$this->load->view('admin/artikel_update',$data);
 			$this->load->view('template/footer');
 
 			$config['upload_path'] = './images/';
@@ -123,8 +133,63 @@ class Admin extends CI_Controller {
 		}
 	}
 
-	public function test(){
-		var_dump($this->session->userdata('nama'));
+	public function galery(){
+		$data['query'] = $this->adminmodel->read('galery');
+
+		$this->load->view('template/header');
+		$this->load->view('admin/galery',$data);
+		$this->load->view('template/footer');
+	}
+
+	public function tambahgalery(){
+		$data['judul'] = "Tambah Galery";
+
+		$this->load->view('template/header');
+		$this->load->view('admin/galery_insert',$data);
+		$this->load->view('template/footer');
+	}
+
+
+
+	public function posting(){
+		$kategori = $this->input->post('kategori');
+		$deskripsi = $this->input->post('deskripsi');
+
+		$config['encrypt_name'] = true;
+		
+		if ($kategori == "gambar") {
+			$config['upload_path'] = './images/';
+	        $config['allowed_types'] = 'gif|jpg|jpeg|png|bmp';
+	        $config['max_size'] = 5000;
+	    }else{
+	    	$config['upload_path'] = './video/';
+	        $config['allowed_types'] = 'mp4|MP4';
+	        $config['max_size'] = 200000;
+		}
+
+		$this->load->library('upload', $config);
+
+		if($this->upload->do_upload('input_file')) {
+			$upload = $this->upload->data();
+			$file = $upload['file_name'];
+			$data = array(
+				'file'		=> $file,
+				'deskripsi' => $deskripsi,
+				'kategori'	=> $kategori,
+			);
+
+			$query = $this->adminmodel->create('galery',$data);
+			if ($query) {
+				redirect('admin/galery');
+			}else{
+				echo "<script>alert('Berhasil menambahkan postingan');</script>";
+			}
+
+		}else{
+			echo "<script>alert('Gagal memposting data');history.go(-1)</script>";
+		}
+
+		
 	}
 
 

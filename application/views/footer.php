@@ -10,12 +10,12 @@
       </div>
     </div>
   </div>
-    <script src="<?php echo base_url(); ?>assets/assets/tempo/js/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/tempo/js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/tempo/js/jquery.easing.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/tempo/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/tempo/js/jquery.mixitup.js" type="text/javascript"></script>
-  <script type="text/javascript" src="<?php echo base_url(); ?>assets/tempo/js/slick.min.js"></script>
-  <script type="text/javascript" src="<?php echo base_url(); ?>assets/tempo/js/custom.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/tempo/js/slick.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/tempo/js/custom.js"></script>
     <script src="<?php echo base_url(); ?>assets/tempo/contactform/contactform.js"></script>
     
 </body>

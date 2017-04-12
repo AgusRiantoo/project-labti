@@ -78,7 +78,7 @@
         Jakarta Selatan 12550 Indonesia
         </h3>
         <p class="cta-sub-title"></p>
-        <a href="#" class="btn btn-default">Detail</a>
+        <a href="<?php echo base_url('page/view/3'); ?>" class="btn btn-default">Detail</a>
       </div>
     </div>
   </div>

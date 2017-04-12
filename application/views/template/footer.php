@@ -17,7 +17,7 @@
     <script src="<?php echo base_url('assets/js/fastclick.js'); ?>"></script>
     <!-- NProgress -->
     <script src="<?php echo base_url('assets/js/nprogress.js'); ?>"></script>
-    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script src="<?php echo base_url('assets/tinymce/tinymce.min.js'); ?>"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
     <!-- Custom Theme Scripts -->
     <script src="<?php echo base_url('assets/js/custom.min.js')?>"></script>
